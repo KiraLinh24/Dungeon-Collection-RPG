@@ -1,0 +1,159 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib> 
+#include <string>
+#include "CreateCharacter.h"
+#include "Mage.h"
+#include "Swordsman.h"
+#include "Marksman.h"
+using namespace std;
+
+void createCharacter(){
+  string name;
+
+  cout << "What would you like your character's name to be?" << endl;
+  
+  cin.ignore();
+  getline(cin, name);
+  cout << "Your character's name is " << name << endl;
+
+  cout << "Pick your class: " 
+     << "\n 1. Swordsman "
+      << "\n   HP: 625 "
+      << "\n   ATK: 325 "
+      << "\n   STA: 200 "
+     << "\n 2. Mage "
+      << "\n   HP: 150 "
+      << "\n   ATK: 300 "
+      << "\n   STA: 525 "
+     << "\n 3. Marksman" 
+      << "\n   HP: 100 "
+      << "\n   ATK: 550 "
+      << "\n   STA: 395 "
+     << endl;
+
+  int choice;
+  cin >> choice;
+  string weapon;
+  bool cont = true;
+  while(cont == true){
+    switch(choice){
+      case 1:
+        cout << "You have chosen the Swordsman class." << endl;
+        cout << "Pick your weapon: " 
+         << "\n 1. Greatsword "
+         << "\n 2. Katana Blade "
+         << endl;
+        int weaponChoice;
+        cin >> weaponChoice;
+        while(true){  
+          if (weaponChoice == 1){
+            //Swordsman swordsman(name, "Swordsman", 625, 325, 200, 500);
+          }
+          else if (weaponChoice == 2){
+            
+          }
+          else{
+            cout << "Invalid input. Please try again." << endl;
+            cin >> weaponChoice;
+          }
+        }
+        cont = false;
+        break;
+      case 2:
+        cout << "You have chosen the Mage class." << endl;
+        cout << "Pick your weapon: " 
+         << "\n 1. Catalyst Book "
+         << "\n 2. Staff "
+         << endl;
+        int weaponChoice;
+        cin >> weaponChoice;
+        while(true){  
+          if (weaponChoice == 1){
+            //Swordsman swordsman(name, "Swordsman", 625, 325, 200, 500);
+          }
+          else if (weaponChoice == 2){
+
+          }
+          else{
+            cout << "Invalid input. Please try again." << endl;
+            cin >> weaponChoice;
+          }
+        }
+        //Mage mage(name, "Mage", 150, 300, 525, 500);
+        cont = false;
+        break;
+      case 3:
+        cout << "You have chosen the Marksman class." << endl;
+        cout << "Pick your weapon: " 
+         << "\n 1. Crossbow "
+         << "\n 2. Shuriken "
+         << endl;
+        //Marksman marksman(name, "Marksman", 100, 550, 400, 500);
+        cont = false;
+        break;
+      default:
+        cout << "Invalid choice. Please enter a valid choice." << endl;
+        cin >> choice;
+    }
+  }
+}
+
+
+void loadGame(){
+  
+}
+
+void saveGame(){
+
+  
+}
+
+
+void starter(){
+  cout << "Starter Menu:" << endl
+   << "===============" << endl
+   << "1. New Game" << endl
+   << "2. Load Game" << endl
+   << "3. Quit Game" << endl;
+}
+
+void menu(){
+  cout << "GAME MENU" << endl 
+     << " ----------------- " << endl
+     << "1. Explore" << endl
+     << "2. Inventory" << endl
+     << "3. Save Game" << endl 
+     << "4. Quit" << endl;
+}
+
+int main() {
+
+  starter();
+  int choice;
+  bool cont = true;
+  cin >> choice;
+
+  
+  while(cont == true){
+    switch(choice){
+      case 1:
+        cout << endl << "You have chosen to start a new game." << endl;
+        createCharacter();
+        cont = false;
+        break;
+      case 2:
+        cout << "You have chosen to load a game." << endl;
+        loadGame();
+        cont = false;
+        break;
+      case 3:
+        cout << "You have chosen to quit the game." << endl;
+        exit(1);
+        break;
+      default:
+        cout << "Invalid choice. Select again." << endl;
+        cin >> choice;
+    }
+  }
+}
